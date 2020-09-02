@@ -1,0 +1,124 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+        <div id="top"></div>
+
+        <div id="menu">
+            <div id="menu_inner">
+                <div frag="窗口100">
+                    <ul class="wp-menu">
+                        <li class="menu-item i1"><a class="menu-link" href="http://www.sdtz.sdu.edu.cn/main.htm" target="_self">首页</a>
+                        </li>
+                        <li class="menu-item i2"><a class="menu-link" href="/12/list.htm" target="_self">本部职责</a>
+                        </li>
+                        <li class="menu-item i3"><a class="menu-link" href="/13/list.htm" target="_self">党外代表人士风采</a>
+                            <ul class="sub-menu ">
+                                <li class="sub-item i3-1"><a class="sub-link" href="/576/list.htm" target="_self">人大代表</a>
+                                    <ul class="sub-menu ">
+                                        <li class="sub-item i3-1-1"><a class="sub-link" href="/586/list.htm" target="_self">全国人大代表</a>
+                                        </li>
+                                        <li class="sub-item i3-1-2"><a class="sub-link" href="/587/list.htm" target="_self">山东省人大代表</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-item i3-2"><a class="sub-link" href="/577/list.htm" target="_self">政协委员</a>
+                                    <ul class="sub-menu ">
+                                        <li class="sub-item i3-2-1"><a class="sub-link" href="/588/list.htm" target="_self">全国政协委员</a>
+                                        </li>
+                                        <li class="sub-item i3-2-2"><a class="sub-link" href="/589/list.htm" target="_self">山东省政协委员</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-item i3-3"><a class="sub-link" href="/578/list.htm" target="_self">政府参事</a>
+                                </li>
+                                <li class="sub-item i3-4"><a class="sub-link" href="/579/list.htm" target="_self">文史馆馆员</a>
+                                </li>
+                                <li class="sub-item i3-5"><a class="sub-link" href="/580/list.htm" target="_self">党派代表人士</a>
+                                </li>
+                                <li class="sub-item i3-6"><a class="sub-link" href="/581/list.htm" target="_self">无党派代表人士</a>
+                                </li>
+                                <li class="sub-item i3-7"><a class="sub-link" href="/582/list.htm" target="_self">留学归国人员</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item i4"><a class="menu-link" href="/14/list.htm" target="_self">民主党派</a>
+                            <ul class="sub-menu ">
+                                <li class="sub-item i4-1"><a class="sub-link" href="/mg/list.htm" target="_blank">民革</a>
+                                </li>
+                                <li class="sub-item i4-2"><a class="sub-link" href="/516/list.htm" target="_self">民盟</a>
+                                </li>
+                                <li class="sub-item i4-3"><a class="sub-link" href="/517/list.htm" target="_self">民建</a>
+                                </li>
+                                <li class="sub-item i4-4"><a class="sub-link" href="/518/list.htm" target="_self">民进</a>
+                                </li>
+                                <li class="sub-item i4-5"><a class="sub-link" href="/520/list.htm" target="_self">农工党</a>
+                                </li>
+                                <li class="sub-item i4-6"><a class="sub-link" href="/519/list.htm" target="_self">致公党</a>
+                                </li>
+                                <li class="sub-item i4-7"><a class="sub-link" href="/521/list.htm" target="_self">九三学社</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item i5"><a class="menu-link" href="/15/list.htm" target="_self">民族宗教</a>
+                        </li>
+                        <li class="menu-item i6"><a class="menu-link" href="/16/list.htm" target="_self">港澳台海外</a>
+                        </li>
+                        <li class="menu-item i7"><a class="menu-link" href="/18/list.htm" target="_self">作风建设</a>
+                        </li>
+                        <li class="menu-item i8"><a class="menu-link" href="/19/list.htm" target="_self">表格下载</a>
+                        </li>
+                        <li class="menu-item i9"><a class="menu-link" href="/22/list.htm" target="_self">通知公告</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% block content %}{% endblock %}
+
+        <div id="bottom">
+            <div id="bottom_inner">
+                版权所有 © 山东大学党委统战部<br />
+                地址：地址：山东大学中心校区明德楼A区  邮编：250100<br />
+                电话：0531-88366789  传真：0531-88364989  邮箱：tzb@sdu.edu.cn
+            </div>
+        </div>
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/comcus.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>

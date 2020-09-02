@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+#sub_banner {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	position: absolute;
+	top: 0px;
+	background-image: url(images/subimg/banner1.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size:100% auto;
+}
+#sub_wrap {
+	height: auto;
+	width: 100%;
+	padding-top: 130px;
+}
+
+#sub_inner {
+	background-color: #FFFFFF;
+	height: auto;
+	width: 1220px;
+	margin-left: auto;
+	background-image: url(images/main_innerbg.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	margin-right: auto;
+	padding: 40px;
+}
+#slide_zhezhao {
+	background-image: url(images/slide_zhezhao.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	z-index: 20;
+	bottom: 0px;
+}
+#sub_main {
+	height: auto;
+}
+#sub_left {
+	float: left;
+	height: auto;
+	width: 240px;
+}
+#sub_left_top {
+	line-height: 50px;
+	background-color: #B82329;
+	font-size: 20px;
+	color: #FFFFFF;
+	text-align: center;
+}
+#sub_left_menu {
+	border: 1px solid #B82329;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-right: 40px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+}
+#sub_left_menu li {
+	list-style-type: none;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#sub_left_menu a {
+	display: block;
+	border: 1px solid #B82329;
+	text-decoration: none;
+}
+#sub_left_menu a:hover {
+	color: #FFFFFF;
+	background-color: #B82329;
+}
+
+#sub_left_menu a.active {
+	color: #FFFFFF;
+	background-color: #B82329;
+}
+
+
+
+#sub_right {
+	float: right;
+	height: auto;
+	width: 920px;
+}
+#sub_right_top {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #B82329;
+	height: 50px;
+}
+#sub_right_top_l {
+	float: left;
+	background-image: url(images/sub_right_top_lbg.png);
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	padding-left: 45px;
+	font-size: 20px;
+	line-height: 50px;
+}
+#sub_right_top_r {
+	float: right;
+	font-size: 16px;
+	padding-top: 10px;
+}
+#sub_right_main {
+}
+
+#list {
+	padding: 10px;
+	max-height: 999999px;
+}
+.news_list li {
+	padding-left: 16px;
+	list-style-type: none;
+	background-image: url(images/li.png);
+	background-repeat: no-repeat;
+	background-position: 2px 20px;
+	line-height: 45px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+}
+#show {
+	padding: 10px;
+}
+#show_title {
+	font-size: 24px;
+	line-height: 35px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #787878;
+	font-weight: bold;
+}
+#show_info {
+	font-size: 16px;
+	line-height: 26px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: #888888;
+}
+#show_info a {
+	color: #888888;
+}
+#show_content {
+	padding-top: 10px;
+}
+#show_content p {
+	text-indent: 2em;
+}
+
+#category_teacher {
+	padding: 10px;
+}#category_block {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#category_block_top {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #B82329;
+	height: 45px;
+	margin-bottom: 10px;
+	clear: both;
+	margin-top: 15px;
+}
+#category_block_top_l {
+	background-color: #B82329;
+	color: #FFFFFF;
+	float: left;
+	line-height: 45px;
+	font-size: 20px;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+#category_block_top_l2 {
+	float: left;
+	background-image: url(images/subimg/category_block_top_l2bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 25px;
+	height: 45px;
+}
+#category_main_teacher {
+	padding-top: 10px;
+	padding-right: 25px;
+	padding-bottom: 10px;
+	padding-left: 25px;
+}
+#category_main_teacher_left {
+	float: left;
+	width: 80px;
+	color: #FFFFFF;
+	text-align: center;
+	height: 80px;
+	font-size: 20px;
+	line-height: 80px;
+}
+#category_main_teacher_left_arrow {
+	float: left;
+	width: 8px;
+	height: 80px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.teacher_color1 {
+	background-color: #d43e44;
+}
+.teacher_color2 {
+	background-color: #b9812e;
+}
+.teacher_color3 {
+	background-color: #2193d2;
+}
+.teacher_arrow_color1 {
+	background-image: url(images/subimg/teacher_arrow1bg.png);
+}
+.teacher_arrow_color2 {
+	background-image: url(images/subimg/teacher_arrow2bg.png);
+}
+.teacher_arrow_color3 {
+	background-image: url(images/subimg/teacher_arrow3bg.png);
+}
+
+
+#category_main_teacher_right {
+	float: right;
+	width: 720px;
+	font-size: 14px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+}
+#category_main_teacher_right li {
+	float: left;
+	width: 80px;
+	list-style-type: none;
+	line-height: 18px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#category_main_tutor {
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+}
+#category_main_tutor li {
+	float: left;
+	width: 190px;
+	list-style-type: none;
+	padding: 10px;
+}
+#tutor_txt_name {
+	font-size: 15px;
+	line-height: 25px;
+}
+#tutor_txt_research {
+	font-size: 14px;
+	color: #999999;
+	line-height: 22px;
+	padding-top: 5px;
+}
+
+#tutor_img {
+	float: left;
+	width: 60px;
+}
+#tutor_txt {
+	float: right;
+	width: 120px;
+}
+
+#teacher_list {
+	padding: 5px;
+}
+#teacher_list li {
+	float: left;
+	width: 96px;
+	list-style-type: none;
+	line-height: 18px;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+#lecture_list {
+	clear: both;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#lecture_list li {
+	list-style-type: none;
+	padding-top: 15px;
+	padding-right: 65px;
+	padding-bottom: 15px;
+	padding-left: 65px;
+}
+
+#lecture_list_right {
+	float: right;
+	width: 670px;
+	background-image: url(images/dot.png);
+	background-repeat: repeat-x;
+	background-position: 0px bottom;
+	padding-bottom: 12px;
+}
+
+#search_list {
+	padding: 10px;
+}
+#search_list_top {
+	height: 60px;
+	padding-top: 10px;
+}
+#search_list_title {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+	background-image: url(images/subimg/search_list_titlebg.png);
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	padding-left: 30px;
+}
+#search_list_des {
+	font-size: 14px;
+	color: #999999;
+	line-height: 24px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#search_list_date {
+	font-size: 14px;
+	color: #666666;
+	padding-bottom: 20px;
+}
+#search_list_main {
+	clear: both;
+}
+
+
+.s_border {
+	float: left;
+	height: 36px;
+	width: 200px;
+	background-color: #FFFFFF;
+	line-height: 36px;
+	border: 1px solid #B82329;
+}
+#teacher_content {
+	padding-top: 10px;
+}
+#neirong-top{
+	width:880px;
+	height:auto;
+	text-align:left;
+	float: left;
+}
+#neirong-bottom{
+	width:880px;
+	height:auto;
+	position:relative;
+	text-align:left;
+	clear: both;
+}
+.introduce li {
+	list-style-type: none;
+}
+
+.bottom{
+	position:relative;
+}
+.name{
+	background-image: url(images/subimg/search_list_titlebg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+	display:block;
+	font-size:24px;
+	line-height: 40px;
+	padding-left: 35px;
+	margin-top: 10px;
+}
+.info{
+	width: 600px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 20px;
+	line-height: 30px;
+}
+.info li{
+	list-style-type:none;
+	margin-top: 8px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-top: 6px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 8px;
+}
+.info li.class1{
+         padding:8px 0 0 8px;
+         margin:7px 0 0 0;
+         height:112px;
+         list-style-type:none;
+         font-size:16px;}
+.photo{
+	height:252px;
+	width:185px;
+	float: left;
+	padding-top: 7px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 6px;
+	margin-top: 5px;
+}
+.introduce{
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 0;
+	padding-left: 20px;
+}
+.introduce h3 {
+	margin-top: 15px;
+}
+
+#list_teacher {
+	padding: 10px;
+	max-height: 999999px;
+}
+#list_teacher li {
+	float: left;
+	width: 150px;
+	text-align: center;
+	list-style-type: none;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
