@@ -4,4 +4,7 @@ from wagtail.core.models import Page
 
 
 class HomePage(Page):
-    pass
+    template = "home/home_page.html"
+    subpage_types = [
+        'news.NewsListingPage',
+    ]

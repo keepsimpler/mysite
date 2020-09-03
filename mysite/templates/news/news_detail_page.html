@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <div id="wrap">
+        <div id="sub_inner">
+            <div id="sub_main">
+                <div id="sub_right_top">
+                    <div id="sub_right_top_l">
+                        <span>{{ self.news_title }}</span>
+                    </div>
+                    <div id="sub_right_top_r">
+                        <div frag="窗口3">
+                            <div style="float:left;">当前位置：</div>
+                            <span class="Column_Position">
+                                <a href="/main.htm" target="_self">首页</a>
+                                <span class="possplit">&nbsp;&nbsp;</span>
+                                <a href="/14/list.htm" target="_self">民主党派</a>
+                                <span class="possplit">&nbsp;&nbsp;</span>
+                                <a href="/mg/list.htm" target="_blank">民革</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="sub_right_main">
+                    <div id="show">
+                        <div frag="窗口10" portletmode="simpleArticleAttri">
+                            <div id="show_title"> {{ self.news_title }} </div>
+                            <div id="show_info">发布时间：2020-02-14 作者： 来源：民革山东大学委员会</div>
+                            <div id="show_content">
+                                <div class="wp_articlecontent">
+                                    {% for block in self.content %}
+                                        {% include_block block %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+        <div id="wrap_footer"></div>
+    </div>
+{% endblock %}

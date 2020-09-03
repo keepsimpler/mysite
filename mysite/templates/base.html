@@ -20,6 +20,7 @@
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -106,15 +107,15 @@
 
         <div id="bottom">
             <div id="bottom_inner">
-                版权所有 © 山东大学党委统战部<br />
-                地址：地址：山东大学中心校区明德楼A区  邮编：250100<br />
+                河南理工大学党委统战部<br />
+                地址：山东大学中心校区明德楼A区  邮编：250100<br />
                 电话：0531-88366789  传真：0531-88364989  邮箱：tzb@sdu.edu.cn
             </div>
         </div>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/comcus.js' %}"></script>
 
         {% block extra_js %}
