@@ -21,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/simplenews.css' %}">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -33,17 +34,22 @@
 
         <div id="menu">
             <div id="menu_inner">
-                <div frag="窗口100">
+                <div>
                     <ul class="wp-menu">
-                        <li class="menu-item i1"><a class="menu-link" href="http://www.sdtz.sdu.edu.cn/main.htm" target="_self">首页</a>
+                        <li class="menu-item i1">
+                            <a class="menu-link" href="http://www.sdtz.sdu.edu.cn/main.htm" target="_self">首页</a>
                         </li>
-                        <li class="menu-item i2"><a class="menu-link" href="/12/list.htm" target="_self">本部职责</a>
+                        <li class="menu-item i2">
+                            <a class="menu-link" href="/12/list.htm" target="_self">本部职责</a>
                         </li>
-                        <li class="menu-item i3"><a class="menu-link" href="/13/list.htm" target="_self">党外代表人士风采</a>
+                        <li class="menu-item i3">
+                            <a class="menu-link" href="/13/list.htm" target="_self">党外代表人士风采</a>
                             <ul class="sub-menu ">
-                                <li class="sub-item i3-1"><a class="sub-link" href="/576/list.htm" target="_self">人大代表</a>
+                                <li class="sub-item i3-1">
+                                    <a class="sub-link" href="/576/list.htm" target="_self">人大代表</a>
                                     <ul class="sub-menu ">
-                                        <li class="sub-item i3-1-1"><a class="sub-link" href="/586/list.htm" target="_self">全国人大代表</a>
+                                        <li class="sub-item i3-1-1">
+                                            <a class="sub-link" href="/586/list.htm" target="_self">全国人大代表</a>
                                         </li>
                                         <li class="sub-item i3-1-2"><a class="sub-link" href="/587/list.htm" target="_self">山东省人大代表</a>
                                         </li>

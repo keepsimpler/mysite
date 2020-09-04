@@ -12,10 +12,12 @@
                     </div>
                     <div id="sub_right_top_r">
                         <div>
-                            <div style="float:left;">当前位置:</div>
+                            <div style="float:left;">当前位置：</div>
                             <span class="Column_Position">
                                 {% for url, title in ancestors %}
-                                    <span class="possplit">&nbsp;&nbsp;</span>
+                                    {% if forloop.counter > 1 %}
+                                        <span class="possplit">&nbsp;&nbsp;</span>
+                                    {% endif %}
                                     <a href="{{ url }}" target="_self">{{ title }}</a>
                                 {% endfor %}
                             </span>

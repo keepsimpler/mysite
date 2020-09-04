@@ -1,1 +1,76 @@
 {% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div id="wrap">
+        <div id="sub_inner">
+            <div id="sub_main">
+                <div id="sub_right_top">
+                    <div id="sub_right_top_l">
+                        <span>{{ self.title }}</span>
+                    </div>
+                    <div id="sub_right_top_r">
+                        <div>
+                            <div style="float:left;">当前位置：</div>
+                            <span class="Column_Position">
+                                {% for url, title in ancestors %}
+                                    {% if forloop.counter > 1 %}
+                                        <span class="possplit">&nbsp;&nbsp;</span>
+                                    {% endif %}
+                                    <a href="{{ url }}" target="_self">{{ title }}</a>
+                                {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="sub_right_main">
+                    <div id="show">
+                        <div>
+                            <ul class="news_list clearfix">
+                                {% for post in posts %}
+                                    <li class="news n1 clearfix">
+                                            <span class="news_title">
+                                                <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
+                                            </span>
+                                            <span class="date">2016-05-24</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <!-- Pagination -->
+                            <div>
+                                <ul class="wp_paging clearfix">
+                                    <li class="pages_count">
+                                        <span class="per_page">每页&nbsp;<em class="per_count">20</em>&nbsp;记录&nbsp;</span>
+                                        <span class="all_count">总共&nbsp;<em class="all_count">{{ posts.paginator.count }}</em>&nbsp;记录&nbsp;</span>
+                                    </li>
+                                    <li class="page_nav">
+                                        <a class="first" href="?page=1" target="_self"><span>第一页</span></a>
+                                        {% if posts.has_previous %}
+                                            <a class="prev" href="?page={{ posts.previous_page_number }}" target="_self"><span>&lt;&lt;上一页</span></a>
+                                        {% endif %}
+                                        {% if posts.has_next %}
+                                            <a class="next" href="?page={{ posts.next_page_number }}" target="_self"><span>下一页&gt;&gt;</span></a>
+                                        {% endif %}
+                                        <a class="last" href="?page={{ posts.paginator.num_pages }}" target="_self"><span>尾页</span></a>
+                                    </li>
+                                    <li class="page_jump">
+                                        <span class="pages">页码&nbsp;
+                                            <em class="curr_page">{{ posts.number }}</em>
+                                            /
+                                            <em class="all_pages">{{ posts.paginator.num_pages }}</em>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div id="wrap_footer"></div>
+    </div>
+{% endblock %}
