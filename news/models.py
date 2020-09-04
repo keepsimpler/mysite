@@ -52,3 +52,13 @@ class NewsDetailPage(Page):
         FieldPanel("news_title"),
         StreamFieldPanel("content"),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        first_published_date = self.first_published_at.strftime("%Y-%m-%d")
+        context['first_published_date'] = first_published_date
+        ancestors = [(ancestor.url, ancestor.title) for ancestor in self.get_ancestors()[1:]]
+        context['ancestors'] = ancestors
+        parent_title = self.get_parent().title
+        context['parent_title'] = parent_title
+        return context
