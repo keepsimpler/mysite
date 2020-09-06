@@ -1,24 +1,213 @@
-{% extends "base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>山东大学统一战线</title>
 
-{% block extra_js %}
-    <script type="text/javascript" src="{% static 'js/autoImageSlider.js' %}"></script>
-{% endblock %}
+    <link type="text/css" href="/_css/_system/system.css" rel="stylesheet"/>
+    <link type="text/css" href="/_upload/site/1/style/1/1.css" rel="stylesheet"/>
+    <link type="text/css" href="/_upload/site/00/04/4/style/3/3.css" rel="stylesheet"/>
+    <link type="text/css" href="/_js/_portletPlugs/simpleNews/css/simplenews.css" rel="stylesheet"/>
+    <link type="text/css" href="/_js/_portletPlugs/sudyNavi/css/sudyNav.css" rel="stylesheet"/>
 
-{% block content %}
+    <script language="javascript" src="/_js/jquery.min.js" sudy-wp-context="" sudy-wp-siteId="4"></script>
+    <script language="javascript" src="/_js/jquery.sudy.wp.visitcount.js"></script>
+    <script type="text/javascript" src="/_js/_portletPlugs/sudyNavi/jquery.sudyNav.js"></script>
+    <link href="/_upload/tpl/00/19/25/template25/style.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/_upload/tpl/00/19/25/template25/js/autoImageSlider.js" type="text/javascript"></script>
+    <script src="/_upload/tpl/00/19/25/template25/js/comcus.js" type="text/javascript"></script>
+    <script language="javascript">
+        $(function () {
+//搜索框效果
+            $("#submitspan").click(function () {
+                if ($('#key').val() == '' || $('#key').val() == '请输入您要搜索的内容') {
+                    alert('请先输入关键字，再点击搜索。');
+                    $("#key").focus();
+                } else {
+                    $("#sch").submit();
+                }
+            });
+
+            $("#key").focus(function () {
+                if ($(this).val() == "请输入您要搜索的内容") {
+                    $(this).val("");
+                }
+            });
+            $("#key").blur(function () {
+                if ($(this).val() == "") {
+                    $(this).val("请输入您要搜索的内容")
+                }
+            })
+            <!--下拉菜单开始-->
+            $('#nav>li.mainlevel').mousemove(function () {
+                if ($(this).children('ul').children('li').length > 0) {
+                    $(this).find('ul').slideDown();
+                    $(this).addClass('hover');
+                }
+            });
+            $('#nav>li.mainlevel').mouseleave(function () {
+                $(this).find('ul').slideUp("fast");
+                $(this).removeClass('hover');
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+<div id="top"></div>
+<div id="menu">
+    <div id="menu_inner">
+        <div frag="窗口100">
+            <ul class="wp-menu">
+
+                <li class="menu-item i1"><a class="menu-link" href="http://www.sdtz.sdu.edu.cn/main.htm" target="_self">首页</a>
+
+                </li>
+
+                <li class="menu-item i2"><a class="menu-link" href="/12/list.htm" target="_self">本部职责</a>
+
+                </li>
+
+                <li class="menu-item i3"><a class="menu-link" href="/13/list.htm" target="_self">党外代表人士风采</a>
+
+
+                    <ul class="sub-menu ">
+
+                        <li class="sub-item i3-1"><a class="sub-link" href="/576/list.htm" target="_self">人大代表</a>
+
+
+                            <ul class="sub-menu ">
+
+                                <li class="sub-item i3-1-1"><a class="sub-link" href="/586/list.htm" target="_self">全国人大代表</a>
+
+                                </li>
+
+                                <li class="sub-item i3-1-2"><a class="sub-link" href="/587/list.htm" target="_self">山东省人大代表</a>
+
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="sub-item i3-2"><a class="sub-link" href="/577/list.htm" target="_self">政协委员</a>
+
+
+                            <ul class="sub-menu ">
+
+                                <li class="sub-item i3-2-1"><a class="sub-link" href="/588/list.htm" target="_self">全国政协委员</a>
+
+                                </li>
+
+                                <li class="sub-item i3-2-2"><a class="sub-link" href="/589/list.htm" target="_self">山东省政协委员</a>
+
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="sub-item i3-3"><a class="sub-link" href="/578/list.htm" target="_self">政府参事</a>
+
+                        </li>
+
+                        <li class="sub-item i3-4"><a class="sub-link" href="/579/list.htm" target="_self">文史馆馆员</a>
+
+                        </li>
+
+                        <li class="sub-item i3-5"><a class="sub-link" href="/580/list.htm" target="_self">党派代表人士</a>
+
+                        </li>
+
+                        <li class="sub-item i3-6"><a class="sub-link" href="/581/list.htm" target="_self">无党派代表人士</a>
+
+                        </li>
+
+                        <li class="sub-item i3-7"><a class="sub-link" href="/582/list.htm" target="_self">留学归国人员</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="menu-item i4"><a class="menu-link" href="/14/list.htm" target="_self">民主党派</a>
+
+
+                    <ul class="sub-menu ">
+
+                        <li class="sub-item i4-1"><a class="sub-link" href="/mg/list.htm" target="_blank">民革</a>
+
+                        </li>
+
+                        <li class="sub-item i4-2"><a class="sub-link" href="/516/list.htm" target="_self">民盟</a>
+
+                        </li>
+
+                        <li class="sub-item i4-3"><a class="sub-link" href="/517/list.htm" target="_self">民建</a>
+
+                        </li>
+
+                        <li class="sub-item i4-4"><a class="sub-link" href="/518/list.htm" target="_self">民进</a>
+
+                        </li>
+
+                        <li class="sub-item i4-5"><a class="sub-link" href="/520/list.htm" target="_self">农工党</a>
+
+                        </li>
+
+                        <li class="sub-item i4-6"><a class="sub-link" href="/519/list.htm" target="_self">致公党</a>
+
+                        </li>
+
+                        <li class="sub-item i4-7"><a class="sub-link" href="/521/list.htm" target="_self">九三学社</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="menu-item i5"><a class="menu-link" href="/15/list.htm" target="_self">民族宗教</a>
+
+                </li>
+
+                <li class="menu-item i6"><a class="menu-link" href="/16/list.htm" target="_self">港澳台海外</a>
+
+                </li>
+
+                <li class="menu-item i7"><a class="menu-link" href="/18/list.htm" target="_self">作风建设</a>
+
+                </li>
+
+                <li class="menu-item i8"><a class="menu-link" href="/19/list.htm" target="_self">表格下载</a>
+
+                </li>
+
+                <li class="menu-item i9"><a class="menu-link" href="/22/list.htm" target="_self">通知公告</a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
 <div id="wrap">
     <div class="inner">
         <div id="key_news">
             <div id="key_news_left"></div>
             <div id="key_news_center">
-                <div>
+                <div frag="窗口5">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table">
                         <tr>
                             <td>
-                                <div id="key_news_title"><a href='{{ most_important_news.url }}' target='_blank'
-                                                            title='{{ most_important_news.title }}'>{{ most_important_news.title }}</a></div>
-                                <div id="key_news_des"><a href='{{ most_important_news.url }}' target='_blank'
-                                                          title='{{ most_important_news.title }}'>{{ most_important_news_description }}</a>
+                                <div id="key_news_title"><a href='/2020/0527/c21a42718/page.htm' target='_blank'
+                                                            title='济南市委统战部来我校调研统战工作'>济南市委统战部来我校调研统战工作</a></div>
+                                <div id="key_news_des"><a href='/2020/0527/c21a42718/page.htm' target='_blank'
+                                                          title='济南市委统战部来我校调研统战工作'>5月27日下午，济南市委统战部副部长张勇一行来我校调研。党委统战部部长秦承涛，合作发展部副部长、校友工作办公室主任杨斌等有关职能部门负责人参加会议。张勇...</a>
                                 </div>
                             </td>
                         </tr>
@@ -31,12 +220,12 @@
                 <div class="main_view">
                     <div class="picshow_window">
                         <div class="picshow_reel">
-                            <div>
+                            <div frag="窗口4">
                                 <ul class="news_list clearfix">
 
                                     <li class="news n1 clearfix">
                                         <a href="javascript:void(0)"><img
-                                                src="{% static 'img/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg' %}"
+                                                src="/_upload/article/images/a4/34/8bfc7b154a53934c901a3d0c38b1/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg"
                                                 width="670" height="480" border="0"/></a>
                                         <div class="picshow_intro">
                                             <p class="picshow_intro_head"><a href='/2020/0527/c21a42718/page.htm'
@@ -47,7 +236,7 @@
 
                                     <li class="news n2 clearfix">
                                         <a href="javascript:void(0)"><img
-                                                src="{% static 'img/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg' %}"
+                                                src="/_upload/article/images/56/aa/3295043c4f658617f862034c58bb/6432c3bb-b1c9-490f-a762-f8e7e5ce1c93.png"
                                                 width="670" height="480" border="0"/></a>
                                         <div class="picshow_intro">
                                             <p class="picshow_intro_head"><a href='/2020/0306/c21a42505/page.htm'
@@ -58,7 +247,7 @@
 
                                     <li class="news n3 clearfix">
                                         <a href="javascript:void(0)"><img
-                                                src="{% static 'img/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg' %}"
+                                                src="/_upload/article/images/3e/f5/036cfdd74f68899284532249f758/20bb96ad-3af7-4176-aab6-55ede18444b7.jpg"
                                                 width="670" height="480" border="0"/></a>
                                         <div class="picshow_intro">
                                             <p class="picshow_intro_head"><a href='/2019/1106/c21a42182/page.htm'
@@ -69,7 +258,7 @@
 
                                     <li class="news n4 clearfix">
                                         <a href="javascript:void(0)"><img
-                                                src="{% static 'img/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg' %}"
+                                                src="/_upload/article/images/40/1f/505ec9604667893083a21e78657d/9986b4d7-e558-4996-91cb-094e84a9e85b.jpg"
                                                 width="670" height="480" border="0"/></a>
                                         <div class="picshow_intro">
                                             <p class="picshow_intro_head"><a href='/2019/0731/c21a40888/page.htm'
@@ -80,7 +269,7 @@
 
                                     <li class="news n5 clearfix">
                                         <a href="javascript:void(0)"><img
-                                                src="{% static 'img/4e9f6b02-8660-4405-9040-a1c38cf95793.jpg' %}"
+                                                src="/_upload/article/images/ac/44/c9c5d57c4138890293d9aeec5862/75c7632f-b34d-4343-9f6c-ede627ee74d9.jpg"
                                                 width="670" height="480" border="0"/></a>
                                         <div class="picshow_intro">
                                             <p class="picshow_intro_head"><a href='/2019/0720/c21a40487/page.htm'
@@ -106,20 +295,61 @@
             <div id="r1_right">
                 <div id="block1">
                     <div id="block1_title">
-                        <div id="block1_title_l">{{ first_list_title }}</div>
-                        <div id="block1_title_r"><a href="{{ first_list_url }}">查看更多+</a></div>
+                        <div id="block1_title_l">统战要闻</div>
+                        <div id="block1_title_r"><a href="http://www.sdtz.sdu.edu.cn/21/list.htm">查看更多+</a></div>
                     </div>
                     <div id="block_list">
-                        <div class="wp-window">
+
+                        <div class="wp-window" frag="窗口1">
                             <ul class="news_list clearfix">
-                                {% for post in first_list %}
-                                    <li class="news n1 clearfix">
-                                            <span class="news_title">
-                                                <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
-                                            </span>
-                                            <span class="date">{{ post.first_published_at | date:"Y-m-d" }}</span>
-                                    </li>
-                                {% endfor %}
+
+                                <li class="news n1 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0527/c21a42718/page.htm' target='_blank' title='济南市委统战部来我校调研统战工作'>济南市委统战部来我校调研统战工作</a>
+
+									</span>
+                                    <span class="date">2020-05-27</span>
+                                </li>
+
+                                <li class="news n2 clearfix">
+									<span class="news_title">
+
+									<a href='/_redirect?siteId=4&columnId=21&articleId=42675' target='_blank'
+                                       title='中共中央召开党外人士座谈会 习近平主持并发表重要讲话'>中共中央召开党外人士座谈会 习近平主持并发表重要讲...</a>
+
+									</span>
+                                    <span class="date">2020-05-09</span>
+                                </li>
+
+                                <li class="news n3 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0306/c21a42505/page.htm' target='_blank' title='打赢疫情阻击战  谋划统战新篇章'>打赢疫情阻击战  谋划统战新篇章</a>
+
+									</span>
+                                    <span class="date">2020-03-06</span>
+                                </li>
+
+                                <li class="news n4 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0122/c21a42445/page.htm' target='_blank' title='我校统战工作获山东省委统战部表彰'>我校统战工作获山东省委统战部表彰</a>
+
+									</span>
+                                    <span class="date">2020-01-22</span>
+                                </li>
+
+                                <li class="news n5 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/1225/c21a42403/page.htm' target='_blank'
+                                       title='“参政党建设70年回顾与前瞻”理论研讨会在中央社院召开'>“参政党建设70年回顾与前瞻”理论研讨会在中央社院召...</a>
+
+									</span>
+                                    <span class="date">2019-12-25</span>
+                                </li>
+
                             </ul>
 
                         </div>
@@ -128,21 +358,52 @@
                 <div id="r1_right_span"></div>
                 <div id="block1">
                     <div id="block1_title">
-                        <div id="block1_title_l">{{ second_list_title }}</div>
-                        <div id="block1_title_r"><a href="{{ second_list_url }}">查看更多+</a></div>
+                        <div id="block1_title_l">通知公告</div>
+                        <div id="block1_title_r"><a href="http://www.sdtz.sdu.edu.cn/22/list.htm">查看更多+</a></div>
                     </div>
                     <div id="block_list">
-                        <div>
+                        <div frag="窗口3">
                             <ul class="news_list clearfix">
 
-                                {% for post in second_list %}
-                                    <li class="news n1 clearfix">
-                                            <span class="news_title">
-                                                <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
-                                            </span>
-                                            <span class="date">{{ post.first_published_at | date:"Y-m-d" }}</span>
-                                    </li>
-                                {% endfor %}
+                                <li class="news n1 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0526/c22a42710/page.htm' target='_blank'
+                                       title='关于山东大学统一战线开展“共绘抗疫同心圆 凝聚发展正能量”主题教育活动的通知'>关于山东大学统一战线开展“共绘抗疫同心圆 凝聚发展...</a>
+
+									</span>
+                                    <span class="date">2020-05-26</span>
+                                </li>
+
+                                <li class="news n2 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0512/c22a42685/page.htm' target='_blank'
+                                       title='关于2020年度山东大学统战调研重点课题校级立项的通知'>关于2020年度山东大学统战调研重点课题校级立项的通知</a>
+
+									</span>
+                                    <span class="date">2020-05-12</span>
+                                </li>
+
+                                <li class="news n3 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0228/c22a42484/page.htm' target='_blank'
+                                       title='关于做好2020年山东大学统战调研宣传工作的通知'>关于做好2020年山东大学统战调研宣传工作的通知</a>
+
+									</span>
+                                    <span class="date">2020-02-28</span>
+                                </li>
+
+                                <li class="news n4 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0203/c22a42448/page.htm' target='_blank'
+                                       title='山东大学党委统战部致全校统一战线广大成员的倡议书'>山东大学党委统战部致全校统一战线广大成员的倡议书</a>
+
+									</span>
+                                    <span class="date">2020-02-03</span>
+                                </li>
 
                             </ul>
 
@@ -153,32 +414,77 @@
             </div>
             <div class="clear"></div>
         </div>
-        <div id="banner"><a href="http://www.sdtz.sdu.edu.cn/sjdzt/list.htm">
-            <img src="{% static 'css/images/banner.jpg' %}" width="1300" height="235" border="0"/></a>
-        </div>
 
+        <div id="banner"><a href="http://www.sdtz.sdu.edu.cn/sjdzt/list.htm"><img
+                src="/_upload/tpl/00/19/25/template25/images/banner.jpg" width="1300" height="235" border="0"/></a>
+        </div>
         <div id="r2">
             <div id="r2_left">
                 <div id="block2">
                     <div id="block2_title">
-                        <div id="block2_title_l">{{ third_list_title }}</div>
+                        <div id="block2_title_l">代表人士风采</div>
                     </div>
                     <div id="block_list">
-                        <div>
+                        <div frag="窗口6">
                             <ul class="news_list clearfix">
-                                {% for post in third_list %}
-                                    <li class="news n1 clearfix">
-                                            <span class="news_title">
-                                                <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
-                                            </span>
-                                            <span class="date">{{ post.first_published_at | date:"Y-m-d" }}</span>
-                                    </li>
-                                {% endfor %}
+
+                                <li class="news n1 clearfix">
+									<span class="news_title">
+
+									<a href='/2020/0224/c13a42473/page.htm' target='_blank'
+                                       title='我校党外人士王文龙教授联系筹措急需物资驰援武汉一线'>我校党外人士王文龙教授联系筹措急需物资驰援武汉...</a>
+
+									</span>
+                                </li>
+
+                                <li class="news n2 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/1118/c13a42241/page.htm' target='_blank' title='陈尚胜：在中外交往历史中求索'>陈尚胜：在中外交往历史中求索</a>
+
+									</span>
+                                </li>
+
+                                <li class="news n3 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/1114/c13a42217/page.htm' target='_blank' title='求学探药无止境 富民兴鲁不畏难'>求学探药无止境 富民兴鲁不畏难</a>
+
+									</span>
+                                </li>
+
+                                <li class="news n4 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/0925/c13a42003/page.htm' target='_blank' title='黄发有：教书育人是教师的天职'>黄发有：教书育人是教师的天职</a>
+
+									</span>
+                                </li>
+
+                                <li class="news n5 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/0925/c13a42002/page.htm' target='_blank'
+                                       title='余之刚教授团队在JAMA Oncology发表乳腺癌研究新进展'>余之刚教授团队在JAMA Oncology发表乳腺癌研究新...</a>
+
+									</span>
+                                </li>
+
+                                <li class="news n6 clearfix">
+									<span class="news_title">
+
+									<a href='/2019/0618/c13a39443/page.htm' target='_blank'
+                                       title='刘大钧先生荣获2019年度“汤用彤学术奖”'>刘大钧先生荣获2019年度“汤用彤学术奖”</a>
+
+									</span>
+                                </li>
+
                             </ul>
+
                         </div>
                     </div>
                     <div id="block_more">
-                        <div id="more_btn"><a href="{{ third_list_url }}">查看更多</a></div>
+                        <div id="more_btn"><a href="http://www.sdtz.sdu.edu.cn/13/list.htm">查看更多</a></div>
                     </div>
                 </div>
                 <div id="block2">
@@ -648,10 +954,18 @@
                 </div>
             </div>
         </div>
-
         <div class="clear"></div>
     </div>
     <div class="clear"></div>
 </div>
 
-{% endblock content %}
+<div id="bottom">
+    <div id="bottom_inner">版权所有 © 山东大学党委统战部<br/>
+        地址：地址：山东大学中心校区明德楼A区 邮编：250100<br/>
+        电话：0531-88366789 传真：0531-88364989 邮箱：tzb@sdu.edu.cn
+    </div>
+</div>
+</body>
+</html>
+
+<image src="/_visitcount?siteId=4&type=1&columnId=5" style="display:none" width="0" height="0"></image>

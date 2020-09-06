@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+{% endblock %}
 
 {% block content %}
     <div id="wrap">
@@ -33,7 +37,7 @@
                                             <span class="news_title">
                                                 <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
                                             </span>
-                                            <span class="date">2016-05-24</span>
+                                            <span class="date">{{ post.first_published_at | date:"Y-m-d" }}</span>
                                     </li>
                                 {% endfor %}
                             </ul>

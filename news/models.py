@@ -9,13 +9,31 @@ from wagtail.core.models import Page
 from streams import blocks
 
 
+# class NewsListingListingPage(Page):
+#     """Listing of listing page lists list of news"""
+#     template = "news/news_listing_listing_page.html"
+#     subpage_types = [
+#         'news.NewsListingPage',
+#         'news.NewsListingListingPage',  # 列表页的子页面也可以是列表页，即列表页可以嵌套
+#     ]
+#
+#     class Meta:
+#         verbose_name = "栏目页"
+#         verbose_name_plural = "栏目页"
+#
+
 class NewsListingPage(Page):
-    """Listing page lists all the News Detail Pages."""
+    """Listing page lists News Detail Pages."""
     template = "news/news_listing_page.html"
-    subpage_types = ['news.NewsDetailPage']
+    subpage_types = [
+        'news.NewsListingPage',  # 列表页的子页面也可以是列表页，即列表页可以嵌套
+        'news.NewsDetailPage',
+    ]
 
     def get_child_pages(self):
-        return self.get_children().public().live()
+        #  find all the NewsDetailPage that is descendants of current page
+        return self.get_descendants().type(NewsDetailPage).public().live()
+        # return self.get_children().public().live()
 
     def get_context(self, request, *args, **kwargs):
         """Adding custom stuff to our context"""
@@ -48,18 +66,26 @@ class NewsListingPage(Page):
 
         return context
 
+    class Meta:
+        verbose_name = "文章列表页"
+        verbose_name_plural = "文章列表页"
+
 
 class NewsDetailPage(Page):
     """Parental news detail page."""
 
     template = "news/news_detail_page.html"
-    parent_page_types = ['news.NewsListingPage']
+    # parent_page_types = ['news.NewsListingPage']
+    subpage_types = []
     news_title = models.CharField(
         max_length=100,
         blank=False,
         null=False,
-        help_text='新闻标题'
+        help_text='新闻标题',
+        verbose_name='新闻标题',
     )
+    #  是否头条
+    is_taotiao = models.BooleanField(verbose_name='是否头条', default=False)
 
     content = StreamField(
         [
@@ -69,11 +95,13 @@ class NewsDetailPage(Page):
         ],
         null=True,
         blank=True,
+        verbose_name="新闻内容"
     )
 
     # content can be displayed in Admin
     content_panels = Page.content_panels + [
         FieldPanel("news_title"),
+        FieldPanel("is_taotiao"),
         StreamFieldPanel("content"),
     ]
 
@@ -86,3 +114,8 @@ class NewsDetailPage(Page):
         parent_title = self.get_parent().title
         context['parent_title'] = parent_title
         return context
+
+    class Meta:
+        verbose_name = "文章内容页"
+        verbose_name_plural = "文章内容页"
+
